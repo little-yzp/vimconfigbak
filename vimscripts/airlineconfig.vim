@@ -1,14 +1,7 @@
-function! MyTablineFormatter()
-	let s = ''
-	let t = tabpagenr('$')
-	echo 'tab:'.t
-	let w = &columns / t
-	for i in range(1, t + 1)
-		let s.= '%'. w. 'T'. i. 'T'
-	endfor
-	return s
-endfunction
-
-nnoremap <F10> :call MyTablineFormatter()<CR>
-
-" let g:airline#extensions#tabline#formatter = 'MyTablineFormatter'
+let g:airline#extensions#tabline#enabled = 1
+" truncate long branch names to a fixed length >
+let g:airline#extensions#branch#displayed_head_limit = 13
+" enable/disable displaying tab number in tabs mode. >
+let g:airline#extensions#tabline#show_tab_nr = 0
+" 显示 buffer 编号，方便切换
+let g:airline#extensions#tabline#buffer_nr_show=1
